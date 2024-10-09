@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>PubPortfolio</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+   </head>
+   <body>
+      <header>
+         <div>
+            <div class="h1">
+               <img src="icon.png" alt="">
+               <h1>PubPortfolio</h1>
+            </div>
+            <button type="button" id="formShow">Submit</button>
+         </div>
+         <div>
+            <p>
+               <span>built with &#x2764;&#xfe0f; </span>by
+               <a href="https://wahidsharifi.vercel.app" target="_blank"
+                  >Wahid Sharifi</a
+               >
+            </p>
+         </div>
+      </header>
+      <main>
+         <form id="form">
+            <input
+               type="text"
+               name="name"
+               id="name"
+               placeholder="your name"
+               maxlength="25"
+               required />
+            <input
+               type="text"
+               name="resource"
+               id="resource"
+               placeholder="link name"
+               maxlength="35"
+               required />
+            <input
+               type="url"
+               name="link"
+               id="link"
+               placeholder="the url"
+               maxlength="200"
+               required />
+            <input type="submit" value="add" id="submit" />
+         </form>
+         <article id="posts">
+            <section class="post">
+               <div>
+                  <a href="https://wahidsharifi.vercel.app" class="resource"
+                     >My Portfolio</a
+                  >
+                  <div></div>
+               </div>
+               <span class="name"
+                  >Submitted by <strong>wahidsharifi</strong></span
+               >
+            </section>
+            <section class="post">
+               <div>
+                  <a
+                     href="https://utkarsh-singh-chouhan.vercel.app/"
+                     class="resource"
+                     >utkarsh-singh-chouhan Portfolio</a
+                  >
+                  <div></div>
+               </div>
+               <span class="name"
+                  >Submitted by <strong>wahidsharifi</strong></span
+               >
+            </section>
+            <section class="post">
+               <div>
+                  <a
+                     href="https://derickmakhubela3d-portfolio.netlify.app"
+                     class="resource"
+                     >derick Portfolio</a
+                  >
+                  <div></div>
+               </div>
+               <span class="name"
+                  >Submitted by <strong>wahidsharifi</strong></span
+               >
+            </section>
+         </article>
+      </main>
+      <script src="mian.js"></script>
+   </body>
+</html>
