@@ -1,4 +1,4 @@
-// form display toggle
+// Form display toggle
 const style = getComputedStyle(document.getElementById("form"));
 const form = document.getElementById('form');
 
@@ -12,7 +12,7 @@ document.getElementById('formShow').addEventListener('click', () => {
    }
 });
 
-// add post
+// Add post (form submission)
 form.addEventListener('submit', async (e) => {
    e.preventDefault();
 
@@ -20,14 +20,19 @@ form.addEventListener('submit', async (e) => {
    let resource = document.getElementById('resource').value;
    let link = document.getElementById('link').value;
 
-   // Send form data to the server
-   const response = await fetch('https://pubportfolio.vercel.app/submit', {
+   // Send form data to the server (POST request)
+   const response = await fetch('/api/submit', {
       method: 'POST',
       headers: {
          'Content-Type': 'application/json'
       },
       body: JSON.stringify({ name, resource, link })
    });
+
+   if (!response.ok) {
+      console.error("Failed to submit form:", response.statusText);
+      return;
+   }
 
    const newPost = await response.json();
 
@@ -46,9 +51,9 @@ form.addEventListener('submit', async (e) => {
    form.style.display = 'none';
 });
 
-// Fetch existing posts from the server
+// Fetch existing posts from the server (GET request)
 window.onload = async () => {
-   const response = await fetch('https://pubportfolio.vercel.app/posts');
+   const response = await fetch('/api/submit'); // Same API endpoint for GET requests
    const postsData = await response.json();
 
    const posts = document.getElementById('posts');
